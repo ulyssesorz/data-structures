@@ -2,7 +2,7 @@ def quick_sort(list):
     if len(list)<=1:
         return list
     else:
-        pivot=list.pop()            #随机选一个中间值
+        pivot=list.pop()            #随机选一个中间值，pop还起到了移除的作用
         left,right=[],[]
         for ele in list:
             if ele<pivot:
