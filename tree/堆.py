@@ -29,7 +29,7 @@ class Heap:
     def buildheap(self,a):
         self.h=list(a)
         self.size=len(a)          #初始化
-        for i in range(self.size//2,-1,-1):
+        for i in range(self.size//2,-1,-1):               #遍历每个父节点，对其最大堆构造
             self.maxheap(i)
 
     def getmax(self):
