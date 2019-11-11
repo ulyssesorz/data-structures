@@ -45,9 +45,9 @@ class Heap:
         sizet=self.size
         self.h.append(data)
         self.size+=1
-        while self.h[sizet]>self.h[sizet//2]:
-            self.h[sizet],self.h[sizet//2]=self.h[sizet//2],self.h[sizet]         #从最后一个节点向上交换
-            sizet/=2
+        while self.h[sizet]>self.h[(sizet-1)//2]:
+            self.h[sizet],self.h[(sizet-1)//2]=self.h[(sizet-1)//2],self.h[sizet]         #从最后一个节点向上交换
+            sizet=(sizet-1)//2
 
     def display(self):
         print(self.h)
