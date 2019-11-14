@@ -49,14 +49,11 @@ class Heap:
             self.h[sizet],self.h[(sizet-1)//2]=self.h[(sizet-1)//2],self.h[sizet]         #从最后一个节点向上交换
             sizet=(sizet-1)//2
 
-    def display(self):
-        print(self.h)
-
 
 h=Heap()
 l = list(map(int, input().split()))
 h.buildheap(l)
 h.insert(2)
 print(h.getmax())
-h.display()
+print(h.h)
 
