@@ -4,12 +4,12 @@ input:第一行输入一个正整数t，表示要构造2t阶B树；第二行输�
 output:第一行输出你构造的B树从上到下每一层的最左节点的第一个关键词（以空格分隔），
 第二行输出你构造的B树从上到下每一层的最右节点的最后一个关键词（以空格分隔
 """
-class Node(object):
+class Node:
 	def __init__(self, data=[],child=[]):
 		self.data = data            #数据域,存int型的值
 		self.children = child       #children是列表，里面是多个节点类
 
-class Tree(object):
+class BTree:
 	def __init__(self, data, nodes=[], degrees=2):
 		self.root = Node([data])
 		self.nodes = nodes
@@ -84,7 +84,7 @@ def traversal_right(node):              #同上
 if __name__ == '__main__':
 	m=int(input())
 	n=int(input())
-	tree = Tree(1,[],m)     #建树
+	tree = BTree(1,[],m)     #建树
 	for i in range(2, n+1):
 		tree.insert(i)      #插入后面的值
 
