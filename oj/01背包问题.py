@@ -37,3 +37,23 @@ if __name__ == '__main__':
 	w = list(map(int, input().split()))
 	v = list(map(int, input().split()))
 	show(n, c, w, bag(n, c, w, v))
+
+"""
+如果只需得出价值
+标准的01背包解法:
+def bag(n, c, w, v):
+	x=[False for i in range(n)]
+	dp = [0 for i in range(c + 1)]
+	for i in range(n):
+		for j in range(c,-1,-1):
+			if j>=w[i]:
+				dp[j]=max(dp[j],dp[j-w[i]]+v[i])
+	print(dp[-1])
+
+if __name__ == '__main__':
+	n = int(input())  # 物品的数量
+	c = int(input())  # 背包的重量
+	w = list(map(int, input().split()))
+	v = list(map(int, input().split()))
+	bag(n,c,w,v)
+"""
