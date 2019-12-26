@@ -17,7 +17,6 @@ def bag(n, c, w, v):
 				dp[i][j] = dp[i - 1][j - w[i - 1]] + v[i - 1]
 	return dp
 
-
 def show(n, c, w, dp):
 	print(dp[n][c])  # 输出最后一种情况的最大重量时的收益
 	x = [False for i in range(n)]  # 表示每种物品
