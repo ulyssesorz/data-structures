@@ -41,7 +41,6 @@ if __name__ == '__main__':
 如果只需得出价值
 标准的01背包解法:
 def bag(n, c, w, v):
-	x=[False for i in range(n)]
 	dp = [0 for i in range(c + 1)]
 	for i in range(n):
 		for j in range(c,-1,-1):
