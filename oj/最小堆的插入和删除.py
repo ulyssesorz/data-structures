@@ -42,12 +42,12 @@ class Heap:
 		sizet=self.size
 		self.size+=1
 		self.h.append(val)
-		while self.h[sizet]<self.h[(sizet-1)//2]:           #向上比较节点和父节点的大小，若不符最小堆特点则交换
-			self.h[sizet],self.h[(sizet-1)//2]=self.h[(sizet-1)//2],self.h[sizet]
-			sizet=(sizet-1)//2
+		while self.h[sizet]<self.h[sizet//2]:           #向上比较节点和父节点的大小，若不符最小堆特点则交换
+			self.h[sizet],self.h[sizet//2]=self.h[sizet//2],self.h[sizet]
+			sizet//=2
 
 	def delete(self):           #删除根节点：即把最后一个节点和根节点交换，再删除最后一个节点
-		if self.size<=0:        #防止溢出
+		if self.size==0:        #防止溢出
 			return
 		self.h[self.size-1],self.h[0]=self.h[0],self.h[self.size-1]
 		self.h.pop()
