@@ -1,8 +1,3 @@
-"""
-第一行是一个数组，代表了最小堆。第二行是接下来要进行操作的次数。第三行开始，分别是两种操作，
-I代表插入，D代表删除。如果操作是I的话，接下去会紧跟一行待插入的数字
-一行，经过插入和删除后的最小堆，直接输出list即可。
-"""
 class Heap:
 	def __init__(self):
 		self.h = []
@@ -42,12 +37,12 @@ class Heap:
 		sizet=self.size
 		self.size+=1
 		self.h.append(val)
-		while self.h[sizet]<self.h[(sizet-1)//2]:           #向上比较节点和父节点的大小，若不符最小堆特点则交换
+		while self.h[sizet]<self.h[(sizet-1)//2] and sizet>0:           #向上比较节点和父节点的大小，若不符最小堆特点则交换
 			self.h[sizet],self.h[(sizet-1)//2]=self.h[(sizet-1)//2],self.h[sizet]
-			sizet=(sizet-1)//2
+			sizet//=2
 
 	def delete(self):           #删除根节点：即把最后一个节点和根节点交换，再删除最后一个节点
-		if self.size<=0:        #防止溢出
+		if self.size==0:        #防止溢出
 			return
 		self.h[self.size-1],self.h[0]=self.h[0],self.h[self.size-1]
 		self.h.pop()
