@@ -88,7 +88,7 @@ class Linked_List:
     def isempty(self):
         return self.head==None
 
-def main():
+if __name__ == '__main__':
     A=Linked_List()
     a1=input('Insert1>>')
     a2=input('Insert2>>')
@@ -107,19 +107,3 @@ def main():
 
     A.reverse()
     A.printlist()
-
-if __name__ =='__main__':
-    main()
-
-
-
-
-
-
-
-
-
-
-
-
-
